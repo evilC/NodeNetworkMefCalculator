@@ -1,39 +1,42 @@
-﻿using System.Windows;
+﻿using System.Reactive.Disposables;
+using System.Windows;
 using DynamicData;
 using NodeNetwork.ViewModels;
+using ReactiveUI;
 
 namespace MefCalculator.Gui
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IViewFor<MainViewModel>
     {
+        #region ViewModel
+        public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
+            typeof(MainViewModel), typeof(MainWindow), new PropertyMetadata(null));
+
+        public MainViewModel ViewModel
+        {
+            get => (MainViewModel)GetValue(ViewModelProperty);
+            set => SetValue(ViewModelProperty, value);
+        }
+
+        object IViewFor.ViewModel
+        {
+            get => ViewModel;
+            set => ViewModel = (MainViewModel)value;
+        }
+        #endregion
+
         public MainWindow()
         {
             InitializeComponent();
 
-            //Create a new viewmodel for the NetworkView
-            var network = new NetworkViewModel();
+            this.ViewModel = new MainViewModel();
 
-            //Create the node for the first node, set its name and add it to the network.
-            var node1 = new NodeViewModel();
-            node1.Name = "Node 1";
-            network.Nodes.Add(node1);
-
-            //Create the viewmodel for the input on the first node, set its name and add it to the node.
-            var node1Input = new NodeInputViewModel();
-            node1Input.Name = "Node 1 input";
-            node1.Inputs.Add(node1Input);
-
-            //Create the second node viewmodel, set its name, add it to the network and add an output in a similar fashion.
-            var node2 = new NodeViewModel();
-            node2.Name = "Node 2";
-            network.Nodes.Add(node2);
-
-            var node2Output = new NodeOutputViewModel();
-            node2Output.Name = "Node 2 output";
-            node2.Outputs.Add(node2Output);
-
-            //Assign the viewmodel to the view.
-            networkView.ViewModel = network;
+            this.WhenActivated(d =>
+            {
+                this.OneWayBind(ViewModel, vm => vm.ListViewModel, v => v.nodeList.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkViewModel, v => v.viewHost.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.ValueLabel, v => v.valueLabel.Content).DisposeWith(d);
+            });
         }
     }
 }
