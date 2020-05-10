@@ -10,7 +10,7 @@ using ReactiveUI;
 namespace MefCalculator.Plugins.Nodes.Product
 {
     [Export(typeof(NodeViewModel))]
-    [ExportMetadata("NodeName", "Sum")]
+    [ExportMetadata("NodeName", "Product")]
     public class ProductNodeViewModel : NodeViewModel
     {
         static ProductNodeViewModel()
