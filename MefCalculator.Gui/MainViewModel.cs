@@ -3,6 +3,7 @@ using System.Reactive.Linq;
 using DynamicData;
 using MefCalculator.Gui.Nodes.IntegerConstant;
 using MefCalculator.Gui.Nodes.IntegerOutput;
+using MefCalculator.Gui.Nodes.Sum;
 using NodeNetwork;
 using NodeNetwork.Toolkit;
 using NodeNetwork.Toolkit.NodeList;
@@ -33,6 +34,7 @@ namespace MefCalculator.Gui
         public MainViewModel()
         {
             ListViewModel.AddNodeType(() => new IntegerConstantNodeViewModel());
+            ListViewModel.AddNodeType(() => new SumNodeViewModel());
 
             var integerOutput = new IntegerOutputNodeViewModel();
             NetworkViewModel.Nodes.Add(integerOutput);

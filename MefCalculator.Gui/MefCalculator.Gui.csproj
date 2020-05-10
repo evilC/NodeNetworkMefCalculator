@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Nodes\IntegerOutput\IntegerOutputNodeViewModel.cs" />
+    <Compile Include="Nodes\Sum\SumNodeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
