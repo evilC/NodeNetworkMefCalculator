@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.ComponentModel.Composition;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DynamicData;
 using MefCalculator.Editors.Integer;
 using NodeNetwork.Toolkit.ValueNode;
@@ -13,6 +9,8 @@ using ReactiveUI;
 
 namespace MefCalculator.Gui.Nodes.Sum
 {
+    [Export(typeof(NodeViewModel))]
+    [ExportMetadata("NodeName", "Sum")]
     public class SumNodeViewModel : NodeViewModel
     {
         static SumNodeViewModel()

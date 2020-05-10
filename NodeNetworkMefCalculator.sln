@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefCalculator.Gui", "MefCal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefCalculator.Editors", "MefCalculator.Editors\MefCalculator.Editors.csproj", "{1B3B7C81-B841-4C42-982F-61946FA9F761}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{CFA29878-007F-44F7-A4C1-A4A1AD49F7A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
