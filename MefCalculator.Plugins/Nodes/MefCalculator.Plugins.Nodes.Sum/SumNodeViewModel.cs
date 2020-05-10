@@ -7,7 +7,7 @@ using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
 
-namespace MefCalculator.Gui.Nodes.Sum
+namespace MefCalculator.Plugins.Nodes.Sum
 {
     [Export(typeof(NodeViewModel))]
     [ExportMetadata("NodeName", "Sum")]
