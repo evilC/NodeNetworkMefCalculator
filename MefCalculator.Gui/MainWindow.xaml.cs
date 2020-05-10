@@ -1,7 +1,5 @@
 ﻿using System.Reactive.Disposables;
 using System.Windows;
-using DynamicData;
-using NodeNetwork.ViewModels;
 using ReactiveUI;
 
 namespace MefCalculator.Gui

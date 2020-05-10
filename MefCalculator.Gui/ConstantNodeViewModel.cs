@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DynamicData;
+﻿using DynamicData;
 using MefCalculator.Editors.Integer;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
