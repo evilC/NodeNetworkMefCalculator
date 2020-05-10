@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefCalculator.Plugins.Nodes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefCalculator._Build", "MefCalculator._Build\MefCalculator._Build.csproj", "{0752C857-456B-462E-8C16-DC9E96DF6D87}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sum", "Sum", "{EB5EDB42-7805-4C1B-A862-64250DE2D0AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,7 +58,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5313BB0D-F433-49EA-9003-472CB34A094F} = {CFA29878-007F-44F7-A4C1-A4A1AD49F7A5}
-		{1F371D2E-87F8-4BEE-BB42-39242CAAF3F0} = {5313BB0D-F433-49EA-9003-472CB34A094F}
+		{1F371D2E-87F8-4BEE-BB42-39242CAAF3F0} = {EB5EDB42-7805-4C1B-A862-64250DE2D0AF}
+		{EB5EDB42-7805-4C1B-A862-64250DE2D0AF} = {5313BB0D-F433-49EA-9003-472CB34A094F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E240CA68-BB30-4C42-948D-F5D564893CFA}
