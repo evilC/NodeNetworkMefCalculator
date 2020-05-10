@@ -9,7 +9,7 @@ using ReactiveUI;
 
 namespace MefCalculator.Plugins.Nodes.Sum
 {
-    [Export(typeof(NodeViewModel))]
+    [Export(typeof(NodeViewModel)), PartCreationPolicy(CreationPolicy.NonShared)]
     [ExportMetadata("NodeName", "Sum")]
     public class SumNodeViewModel : NodeViewModel
     {
