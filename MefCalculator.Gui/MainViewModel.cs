@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Reactive.Linq;
 using DynamicData;
+using MefCalculator.Gui.Nodes.IntegerConstant;
+using MefCalculator.Gui.Nodes.IntegerOutput;
 using NodeNetwork;
 using NodeNetwork.Toolkit;
 using NodeNetwork.Toolkit.NodeList;
@@ -30,20 +32,20 @@ namespace MefCalculator.Gui
 
         public MainViewModel()
         {
-            ListViewModel.AddNodeType(() => new ConstantNodeViewModel());
+            ListViewModel.AddNodeType(() => new IntegerConstantNodeViewModel());
 
-            OutputNodeViewModel output = new OutputNodeViewModel();
-            NetworkViewModel.Nodes.Add(output);
+            var integerOutput = new IntegerOutputNodeViewModel();
+            NetworkViewModel.Nodes.Add(integerOutput);
 
             NetworkViewModel.Validator = network =>
             {
-                bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
+                var containsLoops = GraphAlgorithms.FindLoops(network).Any();
                 if (containsLoops)
                 {
                     return new NetworkValidationResult(false, false, new ErrorMessageViewModel("Network contains loops!"));
                 }
 
-                //bool containsDivisionByZero = GraphAlgorithms.GetConnectedNodesBubbling(output)
+                //bool containsDivisionByZero = GraphAlgorithms.GetConnectedNodesBubbling(integerOutput)
                 //    .OfType<DivisionNodeViewModel>()
                 //    .Any(n => n.Input2.Value == 0);
                 //if (containsDivisionByZero)
@@ -54,7 +56,7 @@ namespace MefCalculator.Gui
                 return new NetworkValidationResult(true, true, null);
             };
 
-            output.ResultInput.ValueChanged
+            integerOutput.ResultInput.ValueChanged
                 .Select(v => (NetworkViewModel.LatestValidation?.IsValid ?? true) ? v.ToString() : "Error")
                 .BindTo(this, vm => vm.ValueLabel);
         }

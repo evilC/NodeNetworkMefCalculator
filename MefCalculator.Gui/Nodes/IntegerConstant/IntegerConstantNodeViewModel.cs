@@ -5,20 +5,20 @@ using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
 
-namespace MefCalculator.Gui
+namespace MefCalculator.Gui.Nodes.IntegerConstant
 {
-    public class ConstantNodeViewModel : NodeViewModel
+    public class IntegerConstantNodeViewModel : NodeViewModel
     {
-        static ConstantNodeViewModel()
+        static IntegerConstantNodeViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<ConstantNodeViewModel>));
+            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<IntegerConstantNodeViewModel>));
         }
 
         public IntegerValueEditorViewModel ValueEditor { get; } = new IntegerValueEditorViewModel();
 
         public ValueNodeOutputViewModel<int?> Output { get; }
 
-        public ConstantNodeViewModel()
+        public IntegerConstantNodeViewModel()
         {
             this.Name = "Constant";
 

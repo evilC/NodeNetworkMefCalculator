@@ -5,18 +5,18 @@ using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
 
-namespace MefCalculator.Gui
+namespace MefCalculator.Gui.Nodes.IntegerOutput
 {
-    public class OutputNodeViewModel : NodeViewModel
+    public class IntegerOutputNodeViewModel : NodeViewModel
     {
-        static OutputNodeViewModel()
+        static IntegerOutputNodeViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<OutputNodeViewModel>));
+            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<IntegerOutputNodeViewModel>));
         }
 
         public ValueNodeInputViewModel<int?> ResultInput { get; }
 
-        public OutputNodeViewModel()
+        public IntegerOutputNodeViewModel()
         {
             Name = "Output";
 

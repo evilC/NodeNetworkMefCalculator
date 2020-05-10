@@ -142,7 +142,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ConstantNodeViewModel.cs" />
+    <Compile Include="Nodes\IntegerConstant\IntegerConstantNodeViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -150,7 +150,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OutputNodeViewModel.cs" />
+    <Compile Include="Nodes\IntegerOutput\IntegerOutputNodeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -183,5 +183,6 @@
       <Name>MefCalculator.Editors</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
