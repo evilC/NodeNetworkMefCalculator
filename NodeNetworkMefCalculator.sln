@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefCalculator.Plugins.Nodes
 		{0752C857-456B-462E-8C16-DC9E96DF6D87} = {0752C857-456B-462E-8C16-DC9E96DF6D87}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefCalculator.PluginFactory", "MefCalculator.PluginFactory\MefCalculator.PluginFactory.csproj", "{8718FB3B-C7C0-47CA-B98F-11BE0539D142}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{5CE862AF-1FAB-44F9-B65B-67ACC47D0B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CE862AF-1FAB-44F9-B65B-67ACC47D0B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CE862AF-1FAB-44F9-B65B-67ACC47D0B19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8718FB3B-C7C0-47CA-B98F-11BE0539D142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8718FB3B-C7C0-47CA-B98F-11BE0539D142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8718FB3B-C7C0-47CA-B98F-11BE0539D142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8718FB3B-C7C0-47CA-B98F-11BE0539D142}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{EB5EDB42-7805-4C1B-A862-64250DE2D0AF} = {5313BB0D-F433-49EA-9003-472CB34A094F}
 		{46C320F4-7C23-4D34-82C0-B9EEB9128696} = {5313BB0D-F433-49EA-9003-472CB34A094F}
 		{5CE862AF-1FAB-44F9-B65B-67ACC47D0B19} = {46C320F4-7C23-4D34-82C0-B9EEB9128696}
+		{8718FB3B-C7C0-47CA-B98F-11BE0539D142} = {CFA29878-007F-44F7-A4C1-A4A1AD49F7A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E240CA68-BB30-4C42-948D-F5D564893CFA}

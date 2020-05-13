@@ -2,6 +2,7 @@
 using System.Reactive.Linq;
 using DynamicData;
 using MefCalculator.Gui.Nodes.IntegerOutput;
+using MefCalculator.PluginFactory;
 using NodeNetwork;
 using NodeNetwork.Toolkit;
 using NodeNetwork.Toolkit.NodeList;
@@ -31,10 +32,10 @@ namespace MefCalculator.Gui
 
         public MainViewModel()
         {
-            var loader = new GenericMefPluginLoader<NodeViewModel>("Plugins\\Nodes");
+            var loader = new GenericMefPluginLoader<NodePluginFactory>("Plugins\\Nodes");
             foreach (var plugin in loader.Plugins)
             {
-                ListViewModel.AddNodeType(() => plugin.Value);
+                ListViewModel.AddNodeType(() => plugin.Value.CreatePlugin());
             }
 
             var integerOutput = new IntegerOutputNodeViewModel();

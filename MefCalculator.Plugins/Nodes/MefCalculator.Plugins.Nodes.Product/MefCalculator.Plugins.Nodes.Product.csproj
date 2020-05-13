@@ -125,6 +125,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PluginFactory.cs" />
     <Compile Include="ProductNodeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -132,6 +133,10 @@
     <ProjectReference Include="..\..\..\MefCalculator.Editors\MefCalculator.Editors.csproj">
       <Project>{1b3b7c81-b841-4c42-982f-61946fa9f761}</Project>
       <Name>MefCalculator.Editors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MefCalculator.PluginFactory\MefCalculator.PluginFactory.csproj">
+      <Project>{8718fb3b-c7c0-47ca-b98f-11be0539d142}</Project>
+      <Name>MefCalculator.PluginFactory</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
