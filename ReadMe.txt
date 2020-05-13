@@ -8,7 +8,9 @@ Procedure for adding a new plugin:
 	You can most likely just copy the Post-Build event verbatim from an existing plugin
 4) Ensure that the plugin DLL name is the same as the name as the folder it is in
 ie if the plugin name is "MefCalculator.Plugins.Nodes.Foo", it should end up as Artifacts\Nodes\Plugins\MyPlugin\MyPlugin.dll
-5) Reference assembly System.ComponentModel.Composition and add appropriate Exports to the plugin ViewModel class
+5) Implement the NodePluginFactory class for the plugin
+This is used so that multiple instances of each plugin can be created
+Reference assembly System.ComponentModel.Composition and add appropriate Exports to the PluginFactory class
     ie
-    [Export(typeof(NodeViewModel))]
-    [ExportMetadata("NodeName", "MyPluginName")]
+    [Export(typeof(NodePluginFactory))]
+    [ExportMetadata("NodeName", "Product")]
